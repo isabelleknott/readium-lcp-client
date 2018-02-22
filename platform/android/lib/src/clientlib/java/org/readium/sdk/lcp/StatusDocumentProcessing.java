@@ -49,14 +49,8 @@ import java.util.Locale;
 
 public class StatusDocumentProcessing {
 
-    @TargetApi(Build.VERSION_CODES.N)
     public Locale getCurrentLocale() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            return m_context.getResources().getConfiguration().getLocales().get(0);
-        } else {
-            //noinspection deprecation
-            return m_context.getResources().getConfiguration().locale;
-        }
+        return m_context.getResources().getConfiguration().locale;
     }
 
     public interface IDeviceIDManager {
